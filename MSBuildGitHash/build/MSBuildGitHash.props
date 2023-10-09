@@ -1,13 +1,13 @@
 <Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
-    <MSBuildGitHashCommand Condition="'$(MSBuildGitHashCommand)' == ''">git describe --long --always --dirty --exclude=* --abbrev=7</MSBuildGitHashCommand>
+    <MSBuildGitHashCommand Condition="'$(MSBuildGitHashCommand)' == ''">git describe --long --always --dirty --abbrev=7</MSBuildGitHashCommand>
     <MSBuildGitHashValidate>True</MSBuildGitHashValidate>
     <MSBuildGitHashValidateRegex>^[0-9A-Fa-f]{4,32}(-dirty|-broken)%3F%24</MSBuildGitHashValidateRegex>
-    <MSBuildGitHashDirtyRegex>-dirty</MSBuildGitHashDirtyRegex>  
+    <MSBuildGitHashDirtyRegex>-dirty</MSBuildGitHashDirtyRegex>
   </PropertyGroup>
-  
+
   <ItemDefinitionGroup>
-    
+
     <AssemblyMetadataCommand>
       <Value></Value>
       <ValidateLevel>Warn</ValidateLevel>
@@ -15,11 +15,11 @@
       <ValidateRegex></ValidateRegex>
       <OmitOnError>False</OmitOnError>
     </AssemblyMetadataCommand>
-    
+
     <AssemblyMetadata>
       <Value></Value>
     </AssemblyMetadata>
-    
+
   </ItemDefinitionGroup>
 
   <ItemGroup>
@@ -32,6 +32,6 @@
     <AssemblyMetadataCommand Include="GitDescription">
       <Command>git describe --tag</Command>
       <OmitOnError>True</OmitOnError>
-    </AssemblyMetadataCommand>   
+    </AssemblyMetadataCommand>
   </ItemGroup>
 </Project>
